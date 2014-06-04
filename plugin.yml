@@ -1,0 +1,14 @@
+name: DenmarkRulesRankup
+main: com.comze_instancelabs.rulesrankup.Main
+version: 1.0
+author: instancelabs
+commands:
+   rules:
+      description: Main command
+      usage: /rules
+   apply:
+      description: Main command
+      usage: /apply
+   help:
+      description: Main command
+      usage: /help
