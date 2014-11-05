@@ -1,4 +1,4 @@
-package com.comze_instancelabs.rulesrankup;
+package com.instancedev.rulesrankup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
 			Player p = (Player) sender;
 			String pw = getRandomPassword();
 			for (String s : getConfig().getConfigurationSection("rules.").getKeys(true)) {
-				sender.sendMessage(getConfig().getString("rules." + s).replaceAll("&", "§").replaceAll("<player>", sender.getName()).replaceAll("<password>", pw));
+				sender.sendMessage(getConfig().getString("rules." + s).replaceAll("&", "ï¿½").replaceAll("<player>", sender.getName()).replaceAll("<password>", pw));
 			}
 			ppass.put(p, pw);
 			return true;
@@ -49,7 +49,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
 			}
 			Player p = (Player) sender;
 			for (String s : getConfig().getConfigurationSection("help.").getKeys(true)) {
-				sender.sendMessage(getConfig().getString("help." + s).replaceAll("&", "§").replaceAll("<player>", sender.getName()));
+				sender.sendMessage(getConfig().getString("help." + s).replaceAll("&", "ï¿½").replaceAll("<player>", sender.getName()));
 			}
 			return true;
 		} else if (cmd.getName().equalsIgnoreCase("apply")) {
@@ -77,7 +77,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
 				}
 				p.sendMessage(ChatColor.RED + "You supplied a wrong password! Check /rules again ;)");
 			} else {
-				sender.sendMessage(ChatColor.RED + "Usage: /apply password");
+				sender.sendMessage(ChatColor.RED + "Skriv " + ChatColor.GOLD + "/regler " + ChatColor.RED + "og indtast koden. Den står skrevet med " + ChatColor.WHITE + "hvidt" + ChatColor.RED + ". " + ChatColor.GRAY + "Type in the password written at the bottom of /rules.");
 			}
 			return true;
 		}
@@ -109,9 +109,9 @@ public class Main extends JavaPlugin implements PluginMessageListener {
 			String server = in.readUTF();
 			String[] playerList = in.readUTF().split(", ");
 
-			for (String p_ : this.players) {
-				broadcast(p_, playerList);
-			}
+			/*
+			 * for (String p_ : this.players) { broadcast(p_, playerList); }
+			 */
 			this.players.clear();
 		}
 	}
