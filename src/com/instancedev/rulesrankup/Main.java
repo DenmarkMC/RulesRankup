@@ -38,7 +38,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
 			Player p = (Player) sender;
 			String pw = getRandomPassword();
 			for (String s : getConfig().getConfigurationSection("rules.").getKeys(true)) {
-				sender.sendMessage(getConfig().getString("rules." + s).replaceAll("&", "�").replaceAll("<player>", sender.getName()).replaceAll("<password>", pw));
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("rules." + s).replaceAll("<player>", sender.getName()).replaceAll("<password>", pw)));
 			}
 			ppass.put(p, pw);
 			return true;
@@ -49,7 +49,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
 			}
 			Player p = (Player) sender;
 			for (String s : getConfig().getConfigurationSection("help.").getKeys(true)) {
-				sender.sendMessage(getConfig().getString("help." + s).replaceAll("&", "�").replaceAll("<player>", sender.getName()));
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("help." + s).replaceAll("<player>", sender.getName())));
 			}
 			return true;
 		} else if (cmd.getName().equalsIgnoreCase("apply")) {
